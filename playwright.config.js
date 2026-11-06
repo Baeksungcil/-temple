@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test';
+export default defineConfig({testDir:'./browser-tests',use:{baseURL:'http://127.0.0.1:4173',launchOptions:{executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']}},webServer:{command:'"C:/Program Files/nodejs/node.exe" node_modules/vite/bin/vite.js preview --host 127.0.0.1 --port 4173 --strictPort',port:4173,reuseExistingServer:false}});
