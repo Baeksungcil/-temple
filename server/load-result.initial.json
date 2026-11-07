@@ -1,0 +1,23 @@
+{
+  "pass": true,
+  "scope": "Local single-process CPU/network simulation; includes 100 Node clients, not 100 browser GPUs.",
+  "connections": 100,
+  "durationSeconds": 12,
+  "capacity101Status": 503,
+  "chatRecipients": 100,
+  "moveAcknowledgments": 11100,
+  "snapshots": 11327,
+  "roundTripP50Ms": 9.06,
+  "roundTripP95Ms": 26.97,
+  "eventLoopP95Ms": 23.95,
+  "combinedServerAndClientsRssMB": 82.8,
+  "serverMetrics": {
+    "connections": 100,
+    "rejected": 1,
+    "moves": 11100,
+    "chats": 1,
+    "bytesSent": 35622318,
+    "ticks": 115,
+    "maxTickMs": 14.673800000000483
+  }
+}
