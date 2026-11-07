@@ -1,0 +1,56 @@
+{
+  "url": "https://pictures-brochure-news-pct.trycloudflare.com/?update=wall-snow",
+  "http": 200,
+  "online": true,
+  "wallAutoplay": true,
+  "videoContinues": true,
+  "screenBounds": {
+    "x": 28.04340171813965,
+    "y": 344.8369140625,
+    "width": 373.9132022857666,
+    "height": 210.326171875
+  },
+  "viewportChecks": [
+    {
+      "width": 360,
+      "height": 800,
+      "bounds": {
+        "x": 13.81643009185791,
+        "y": 306.521728515625,
+        "width": 332.36713314056396,
+        "height": 186.95654296875
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "bounds": {
+        "x": 19.67639923095703,
+        "y": 323.3804626464844,
+        "width": 350.64720916748047,
+        "height": 197.23904418945312
+      }
+    },
+    {
+      "width": 430,
+      "height": 900,
+      "bounds": {
+        "x": 28.04340171813965,
+        "y": 344.8369140625,
+        "width": 373.9132022857666,
+        "height": 210.326171875
+      }
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "bounds": {
+        "x": 340.98553466796875,
+        "y": 149.4293670654297,
+        "width": 162.0289306640625,
+        "height": 91.14126586914062
+      }
+    }
+  ],
+  "pageErrors": []
+}

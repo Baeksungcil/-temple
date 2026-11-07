@@ -1,0 +1,6 @@
+import fs from 'node:fs/promises';
+const width=1024,height=512,pixels=Buffer.alloc(width*height*4);
+for(let y=0;y<height;y++)for(let x=0;x<width;x++){const az=x/width*Math.PI*2-Math.PI,el=Math.PI/2-y/height*Math.PI;let light=.12+.18*Math.max(0,Math.sin(el));for(const center of [-2.2,-.7,.8,2.3]){const a=Math.atan2(Math.sin(az-center),Math.cos(az-center));light+=18*Math.exp(-(a*a/.025+(el-.48)**2/.16));}light+=5*Math.exp(-((el-1.4)**2)/.05);const rgb=[light*1.02,light,light*.98],max=Math.max(...rgb),e=Math.floor(Math.log2(max))+1,scale=256/2**e,i=(y*width+x)*4;for(let c=0;c<3;c++)pixels[i+c]=Math.min(255,Math.max(0,Math.floor(rgb[c]*scale)));pixels[i+3]=e+128;}
+const chunks=[Buffer.from('#?RADIANCE\n# Original procedural soft-window studio environment\nFORMAT=32-bit_rle_rgbe\n\n-Y '+height+' +X '+width+'\n')];
+for(let y=0;y<height;y++){chunks.push(Buffer.from([2,2,width>>8,width&255]));for(let c=0;c<4;c++)for(let x=0;x<width;x+=128){const count=Math.min(128,width-x),b=Buffer.alloc(count+1);b[0]=count;for(let j=0;j<count;j++)b[j+1]=pixels[(y*width+x+j)*4+c];chunks.push(b);}}
+await fs.mkdir('public/lighting',{recursive:true});await fs.writeFile('public/lighting/temple-studio.hdr',Buffer.concat(chunks));console.log('Generated original 1024x512 RGBE HDRI with unclipped window radiance.');

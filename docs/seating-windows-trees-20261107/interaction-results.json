@@ -1,0 +1,11 @@
+{
+  "twoFingerTap": {
+    "before": 7.915,
+    "after": 6.173
+  },
+  "sitButtonToggles": true,
+  "wallAutoplayBeforeEntry": true,
+  "videoEnlarges": true,
+  "continuesAfterReturn": true,
+  "pageErrors": []
+}

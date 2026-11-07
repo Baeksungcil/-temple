@@ -1,0 +1,626 @@
+{
+  "seatsChecked": 102,
+  "minimumSeatedCameraDistance": 8.433267457167293,
+  "minimumStandingCameraDistance": 7.9147015102031535,
+  "decorations": {
+    "largeTrees": "2",
+    "bulbs": "288",
+    "twinkles": true,
+    "rectangularGlass": true
+  },
+  "pageErrors": [],
+  "results": [
+    {
+      "seat": "nave:-1:18:4.2",
+      "seated": 8.433267457167295,
+      "standing": 7.914701510203157,
+      "standingState": true
+    },
+    {
+      "seat": "nave:-1:18:5.6",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:-1:18:7",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203157,
+      "standingState": true
+    },
+    {
+      "seat": "nave:1:18:4.2",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:1:18:5.6",
+      "seated": 8.433267457167299,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:1:18:7",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203157,
+      "standingState": true
+    },
+    {
+      "seat": "nave:-1:15:4.2",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:-1:15:5.6",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:-1:15:7",
+      "seated": 8.433267457167299,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:1:15:4.2",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203157,
+      "standingState": true
+    },
+    {
+      "seat": "nave:1:15:5.6",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203157,
+      "standingState": true
+    },
+    {
+      "seat": "nave:1:15:7",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:-1:12:4.2",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203159,
+      "standingState": true
+    },
+    {
+      "seat": "nave:-1:12:5.6",
+      "seated": 8.433267457167297,
+      "standing": 7.9147015102031535,
+      "standingState": true
+    },
+    {
+      "seat": "nave:-1:12:7",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:1:12:4.2",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:1:12:5.6",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:1:12:7",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:-1:3:4.2",
+      "seated": 8.433267457167299,
+      "standing": 7.914701510203157,
+      "standingState": true
+    },
+    {
+      "seat": "nave:-1:3:5.6",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:-1:3:7",
+      "seated": 8.433267457167295,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:1:3:4.2",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:1:3:5.6",
+      "seated": 8.433267457167295,
+      "standing": 7.914701510203156,
+      "standingState": true
+    },
+    {
+      "seat": "nave:1:3:7",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:-1:0:4.2",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203159,
+      "standingState": true
+    },
+    {
+      "seat": "nave:-1:0:5.6",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:-1:0:7",
+      "seated": 8.433267457167299,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:1:0:4.2",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203159,
+      "standingState": true
+    },
+    {
+      "seat": "nave:1:0:5.6",
+      "seated": 8.433267457167295,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:1:0:7",
+      "seated": 8.433267457167299,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:-1:-3:4.2",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203157,
+      "standingState": true
+    },
+    {
+      "seat": "nave:-1:-3:5.6",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:-1:-3:7",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203157,
+      "standingState": true
+    },
+    {
+      "seat": "nave:1:-3:4.2",
+      "seated": 8.433267457167299,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:1:-3:5.6",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:1:-3:7",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203157,
+      "standingState": true
+    },
+    {
+      "seat": "nave:-1:-6:4.2",
+      "seated": 8.433267457167299,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:-1:-6:5.6",
+      "seated": 8.433267457167295,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:-1:-6:7",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203157,
+      "standingState": true
+    },
+    {
+      "seat": "nave:1:-6:4.2",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "nave:1:-6:5.6",
+      "seated": 8.433267457167295,
+      "standing": 7.914701510203157,
+      "standingState": true
+    },
+    {
+      "seat": "nave:1:-6:7",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203157,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:-1:18:-0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203156,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:-1:18:0",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203161,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:-1:18:0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203156,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:1:18:-0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:1:18:0",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203159,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:1:18:0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203156,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:-1:12:-0.8",
+      "seated": 8.433267457167299,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:-1:12:0",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:-1:12:0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203155,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:1:12:-0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203157,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:1:12:0",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203159,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:1:12:0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:-1:6:-0.8",
+      "seated": 8.433267457167299,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:-1:6:0",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203157,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:-1:6:0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:1:6:-0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.91470151020316,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:1:6:0",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:1:6:0.8",
+      "seated": 8.433267457167295,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:-1:0:-0.8",
+      "seated": 8.433267457167299,
+      "standing": 7.914701510203159,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:-1:0:0",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203157,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:-1:0:0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203156,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:1:0:-0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:1:0:0",
+      "seated": 8.433267457167297,
+      "standing": 7.91470151020316,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:1:0:0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:-1:-6:-0.8",
+      "seated": 8.4332674571673,
+      "standing": 7.914701510203159,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:-1:-6:0",
+      "seated": 8.433267457167293,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:-1:-6:0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:1:-6:-0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:1:-6:0",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "prayer:1:-6:0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:-1:18:-0.8",
+      "seated": 8.433267457167299,
+      "standing": 7.914701510203157,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:-1:18:0",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203159,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:-1:18:0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203155,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:1:18:-0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203156,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:1:18:0",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203156,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:1:18:0.8",
+      "seated": 8.433267457167299,
+      "standing": 7.914701510203159,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:-1:12:-0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:-1:12:0",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:-1:12:0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:1:12:-0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203157,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:1:12:0",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203159,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:1:12:0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:-1:6:-0.8",
+      "seated": 8.433267457167295,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:-1:6:0",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:-1:6:0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:1:6:-0.8",
+      "seated": 8.433267457167293,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:1:6:0",
+      "seated": 8.433267457167295,
+      "standing": 7.914701510203157,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:1:6:0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.91470151020316,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:-1:0:-0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.91470151020316,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:-1:0:0",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:-1:0:0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:1:0:-0.8",
+      "seated": 8.433267457167295,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:1:0:0",
+      "seated": 8.433267457167297,
+      "standing": 7.91470151020316,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:1:0:0.8",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:-1:-6:-0.8",
+      "seated": 8.433267457167299,
+      "standing": 7.91470151020316,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:-1:-6:0",
+      "seated": 8.433267457167297,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:-1:-6:0.8",
+      "seated": 8.433267457167295,
+      "standing": 7.914701510203157,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:1:-6:-0.8",
+      "seated": 8.433267457167295,
+      "standing": 7.914701510203157,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:1:-6:0",
+      "seated": 8.433267457167299,
+      "standing": 7.914701510203158,
+      "standingState": true
+    },
+    {
+      "seat": "fellowship:1:-6:0.8",
+      "seated": 8.433267457167295,
+      "standing": 7.914701510203158,
+      "standingState": true
+    }
+  ]
+}

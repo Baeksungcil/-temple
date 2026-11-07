@@ -1,0 +1,14 @@
+{
+  "url": "https://talked-were-bargain-effort.trycloudflare.com",
+  "httpStatus": 200,
+  "online": true,
+  "hdri": true,
+  "playback": true,
+  "videoState": {
+    "currentTime": 1.024667,
+    "paused": false,
+    "readyState": 4
+  },
+  "playerText": "",
+  "pageErrors": []
+}

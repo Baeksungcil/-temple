@@ -1,6 +1,7 @@
 import {defineConfig} from 'vite';
 import {createHash} from 'node:crypto';
-export default defineConfig({plugins:[{name:'temple-offline',generateBundle(_,bundle){const assets=Object.keys(bundle).filter(p=>!p.endsWith('.map'));const version=createHash('sha256').update(Object.values(bundle).map(b=>b.code||String(b.source)).join('')).digest('hex').slice(0,12);const files=['/','/offline.html','/manifest.webmanifest','/icon.svg','/icon-192.png','/icon-512.png',...assets.map(p=>'/'+p)];this.emitFile({type:'asset',fileName:'sw.js',source:`const CACHE='temple-${version}';const FILES=${JSON.stringify(files)};
+import {readFileSync} from 'node:fs';
+export default defineConfig({cacheDir:".vite-cache",plugins:[{name:'temple-offline',generateBundle(_,bundle){const assets=Object.keys(bundle).filter(p=>!p.endsWith('.map'));const version=createHash('sha256').update(Object.values(bundle).map(b=>b.code||String(b.source)).join('')).update(readFileSync(new URL('./public/lighting/temple-studio.hdr',import.meta.url))).digest('hex').slice(0,12);const files=['/','/offline.html','/manifest.webmanifest','/icon.svg','/icon-192.png','/icon-512.png','/lighting/temple-studio.hdr',...assets.map(p=>'/'+p)];this.emitFile({type:'asset',fileName:'sw.js',source:`const CACHE='temple-${version}';const FILES=${JSON.stringify(files)};
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES))));
 self.addEventListener('activate',event=>event.waitUntil(self.clients.claim()));
 self.addEventListener('message',event=>{if(event.data==='SKIP_WAITING')self.skipWaiting();});

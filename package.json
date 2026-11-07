@@ -4,11 +4,16 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --host 127.0.0.1",
-    "build": "vite build",
-    "preview": "vite preview --host 127.0.0.1",
+    "dev": "vite --host 127.0.0.1 --configLoader native",
+    "build": "vite build --configLoader native",
+    "preview": "vite preview --host 127.0.0.1 --configLoader native",
     "test": "node --test tests/*.test.js",
-    "test:browser": "playwright test"
+    "test:browser": "playwright test",
+    "world": "node server/index.js",
+    "server:install": "npm ci --prefix server --offline --legacy-peer-deps --install-links --omit=dev --ignore-scripts",
+    "test:server": "node --test server/*.test.js",
+    "test:load": "node server/load-test.js",
+    "preview:world": "vite preview --host 127.0.0.1 --port 5182 --strictPort --configLoader native"
   },
   "dependencies": {
     "three": "0.187.0"

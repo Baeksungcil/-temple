@@ -1,0 +1,17 @@
+{
+  "pass": true,
+  "checks": [
+    "any scene tap exits worship video",
+    "expanded aisle can be walked; NPCs and prayer render",
+    "measured two-head proportions and changing prayer pose"
+  ],
+  "pose": {
+    "ratio": 1.950472052473163,
+    "prayerA": -0.195,
+    "prayerB": -0.22872453648960178,
+    "rootY": 0
+  },
+  "pageErrors": [],
+  "actualPhone": "unverified",
+  "audioSync": "NPC visual loops, no per-character generated speech"
+}

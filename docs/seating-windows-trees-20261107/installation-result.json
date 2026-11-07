@@ -1,0 +1,12 @@
+{
+  "backup": "F:\\20261105_Temple\\backups\\before_seating_windows_trees_20261107_092225",
+  "files": [
+    "src/camera-navigation.js",
+    "src/cathedral.js",
+    "src/character.js",
+    "src/christmas.js",
+    "src/navigation.js",
+    "src/stained-glass.js",
+    "tests/seated-clearance.test.js"
+  ]
+}

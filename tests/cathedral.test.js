@@ -1,0 +1,3 @@
+import {installCanvas} from './canvas-fixture.js';
+import test from 'node:test';import assert from 'node:assert/strict';import * as THREE from 'three';import {createCathedral} from '../src/cathedral.js';
+test('cathedral geometry and interior lights',t=>{installCanvas(t);const scene=new THREE.Scene();const result=createCathedral(scene);assert.equal(result.lamps.length,2);assert.ok(scene.children.length>100);let arches=0;scene.traverse(o=>{if(o.geometry){o.geometry.computeBoundingBox();for(const v of [o.geometry.boundingBox.min,o.geometry.boundingBox.max])assert.ok([v.x,v.y,v.z].every(Number.isFinite));if(o.geometry.type==='TorusGeometry')arches++;}});assert.ok(arches>=20);});

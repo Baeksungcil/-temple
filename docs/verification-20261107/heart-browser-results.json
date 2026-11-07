@@ -1,0 +1,11 @@
+{
+  "threeDimensionalHearts": true,
+  "visitorWishShared": true,
+  "automaticWishShared": true,
+  "lateArrivalSeesBalloons": true,
+  "activeBalloons": "3",
+  "visibleBalloons": "2",
+  "automaticSender": "ambient:1",
+  "ambientVisitors": "30",
+  "pageErrors": []
+}

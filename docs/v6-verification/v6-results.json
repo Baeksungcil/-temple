@@ -1,0 +1,19 @@
+{
+  "music": {
+    "playing": true,
+    "time": 0.250747,
+    "volume": 0.35
+  },
+  "playback": true,
+  "videoState": {
+    "time": 3.095214,
+    "paused": false
+  },
+  "confession": {
+    "nearbyButton": true,
+    "safeText": true,
+    "bubbleExpired": true,
+    "localOnly": true
+  },
+  "pageErrors": []
+}

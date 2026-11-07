@@ -1,0 +1,14 @@
+{
+  "pass": true,
+  "pageErrors": [],
+  "playerReceivesTouches": true,
+  "playerText": "Jesus Heals a Man Born Blind | John 9\nThe Church of Jesus Christ of Latter-day Saints\nThe Church of Jesus Christ of Latter-day Saints\n구독자 259만명\n다음에서 보기:",
+  "failedYoutubeRequests": [
+    {
+      "url": "https://www.youtube-nocookie.com/embed/DHBo7ka3YZQ?autoplay=0&mute=0&playsinline=1&rel=0&enablejsapi=1&origin=http%3A%2F%2F127.0.0.1%3A8812",
+      "error": "net::ERR_ABORTED"
+    }
+  ],
+  "windowTwinkle": true,
+  "choirLayout": "5-left-5-right"
+}

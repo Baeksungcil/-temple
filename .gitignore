@@ -10,3 +10,19 @@ dist/
 test-results/
 playwright-report/
 diagnose.mjs
+
+.vite-cache/
+backups/
+original-exterior/
+screenshots/
+참고이미지/
+
+# Local media and temporary runtime state (full assets are kept in project ZIP backups).
+MP3/
+public/music/*
+!public/music/README.md
+public-origin.json
+mobile-url.txt
+server/desktop-*
+*-results.json
+*-mobile.png

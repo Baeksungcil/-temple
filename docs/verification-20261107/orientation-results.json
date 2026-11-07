@@ -1,0 +1,103 @@
+{
+  "rotations": [
+    {
+      "width": 390,
+      "height": 844,
+      "nav": {
+        "x": 12,
+        "y": 747,
+        "width": 366,
+        "height": 79
+      },
+      "panel": {
+        "x": 14,
+        "y": 425.21875,
+        "width": 362,
+        "height": 308.78125
+      }
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "nav": {
+        "x": 197,
+        "y": 320,
+        "width": 450,
+        "height": 62
+      },
+      "panel": {
+        "x": 212,
+        "y": 49.21875,
+        "width": 420,
+        "height": 264.78125
+      }
+    },
+    {
+      "width": 932,
+      "height": 430,
+      "nav": {
+        "x": 241,
+        "y": 360,
+        "width": 450,
+        "height": 62
+      },
+      "panel": {
+        "x": 256,
+        "y": 89.21875,
+        "width": 420,
+        "height": 264.78125
+      }
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "nav": {
+        "x": 108.5,
+        "y": 305,
+        "width": 450,
+        "height": 62
+      },
+      "panel": {
+        "x": 123.5,
+        "y": 34.21875,
+        "width": 420,
+        "height": 264.78125
+      }
+    },
+    {
+      "width": 568,
+      "height": 320,
+      "nav": {
+        "x": 59,
+        "y": 250,
+        "width": 450,
+        "height": 62
+      },
+      "panel": {
+        "x": 74,
+        "y": 34,
+        "width": 420,
+        "height": 210
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "nav": {
+        "x": 12,
+        "y": 747,
+        "width": 366,
+        "height": 79
+      },
+      "panel": {
+        "x": 14,
+        "y": 425.21875,
+        "width": 362,
+        "height": 308.78125
+      }
+    }
+  ],
+  "playerPreserved": true,
+  "ambientVisitors": "30",
+  "pageErrors": []
+}

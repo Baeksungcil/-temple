@@ -1,0 +1,12 @@
+node_modules
+**/node_modules
+.npm-cache
+.git
+dist
+backups
+original-exterior
+screenshots
+tools/offline-install
+.env*
+**/.env*
+*.log

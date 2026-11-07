@@ -1,0 +1,7 @@
+{
+  "repeatedLaunch": "passed",
+  "coldStart": "passed",
+  "target": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+  "shortcut": "C:\\Users\\A\\Desktop\\Temple 서버 연결.lnk",
+  "arguments": "-NoLogo -NoProfile -WindowStyle Hidden -File \"F:\\20261105_Temple\\Start-Temple.ps1\""
+}
