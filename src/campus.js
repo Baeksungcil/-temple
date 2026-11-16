@@ -1,3 +1,4 @@
+import {createChurchSign} from './church-sign.js';
 import {addStainedWindow} from './stained-glass.js';
 import * as THREE from 'three';
 import {LAYOUT_ROOMS as ROOMS,SIDE_ROWS} from './navigation.js';
@@ -7,6 +8,7 @@ export function createCampus(scene){
  const stone=new THREE.MeshStandardMaterial({color:'#e1d5bf',roughness:.95,map:marble()}),gold=new THREE.MeshStandardMaterial({color:'#ac8852',roughness:.95}),wood=new THREE.MeshStandardMaterial({color:'#634d3e',roughness:.98}),glass=new THREE.MeshStandardMaterial({color:'#c8dce6',emissive:'#d4e6f1',emissiveIntensity:.35,roughness:1});
  function box(w,h,d,m,x,y,z){const a=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);a.position.set(x,y,z);a.castShadow=true;a.receiveShadow=true;scene.add(a);return a;}
  function label(text,x,y,z,angle=0){const c=document.createElement('canvas');c.width=512;c.height=128;const ctx=c.getContext('2d');ctx.fillStyle='#eee4cd';ctx.fillRect(0,0,512,128);ctx.strokeStyle='#ac8852';ctx.lineWidth=8;ctx.strokeRect(8,8,496,112);ctx.fillStyle='#493a2b';ctx.font='bold 48px sans-serif';ctx.textAlign='center';ctx.fillText(text,256,82);const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;const a=new THREE.Mesh(new THREE.PlaneGeometry(4,1),new THREE.MeshBasicMaterial({map:t,side:THREE.DoubleSide}));a.name='room sign '+text;a.position.set(x,y,z);a.rotation.y=angle;scene.add(a);}
+ createChurchSign(scene);
  for(const room of ROOMS.slice(1)){const cx=room.cx;
   box(22,.2,42,stone,cx,-.12,6);box(22,.3,42,stone,cx,10.9,6);
   box(.4,11,42,stone,cx+(cx<0?-10.8:10.8),5.4,6);

@@ -33,5 +33,5 @@ export function createAmbientVisitors({scene,canvas}){
   for(const {instances} of parts){instances.count=index;instances.instanceMatrix.needsUpdate=true;}
   canvas.dataset.ambientVisitors=String(index);canvas.dataset.ambientSeated=String(seated);canvas.dataset.ambientWalking=String(walking);
  }
- return {receive,update};
+ return {receive,update,getPeople:()=>[...states.values()].map(s=>({x:s.x,z:s.z,radius:.9}))};
 }

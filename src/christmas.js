@@ -1,4 +1,4 @@
-import {ROOM_TREES} from './navigation.js';
+import {ROOM_TREES,REGULAR_TREES,TREE_SCALE} from './christmas-layout.js';
 import * as THREE from 'three';
 // Original procedural holiday decorations; no external assets or downloads.
 export function decorateChristmas(scene){
@@ -8,12 +8,8 @@ export function decorateChristmas(scene){
  function add(geometry,material,x,y,z){if(material===glow)material=twinkle[bulb++%twinkle.length];const mesh=new THREE.Mesh(geometry,material);mesh.position.set(x,y,z);mesh.castShadow=true;mesh.receiveShadow=true;group.add(mesh);return mesh;}
  function star(x,y,z,size){const shape=new THREE.Shape();for(let i=0;i<10;i++){const a=Math.PI/2+i*Math.PI/5,r=i%2?size*.44:size;const px=Math.cos(a)*r,py=Math.sin(a)*r;i?shape.lineTo(px,py):shape.moveTo(px,py);}shape.closePath();return add(new THREE.ShapeGeometry(shape),glow,x,y,z);}
  function tree(x,z,size=1){add(new THREE.CylinderGeometry(.22,.3,.65,8),wood,x,.32,z);for(let k=0;k<4;k++)add(new THREE.ConeGeometry((1.12-k*.23)*size,1.35*size,12),green,x,(1.12+k*.72)*size,z);star(x,4.05*size,z,.33*size);for(let k=0;k<4;k++)for(let i=0;i<9;i++){const a=i/9*Math.PI*2+k*.6,r=(.98-k*.21)*size;add(new THREE.SphereGeometry(.095*size,7,5),i%3===0?red:i%3===1?gold:glow,x+Math.cos(a)*r,(.82+k*.72)*size,z+Math.sin(a)*r);}for(const dx of [-.6,.45]){const p=add(new THREE.BoxGeometry(.55,.45,.5),dx<0?red:gold,x+dx,.24,z+.4);add(new THREE.BoxGeometry(.07,.46,.51),dx<0?gold:red,p.position.x,.24,p.position.z);} }
- let treeCount=0;function placedTree(x,z,size){const start=group.children.length;tree(x,z,size);const factor=1.32;for(const mesh of group.children.slice(start)){mesh.position.x=x+(mesh.position.x-x)*factor;mesh.position.z=z+(mesh.position.z-z)*factor;mesh.position.y*=factor;mesh.scale.multiplyScalar(factor);}treeCount++;}
- placedTree(-7.8,-27,1.45);placedTree(7.8,-27,1.45);placedTree(-10.8,20,.85);placedTree(10.8,20,.85);
- // Small trees at column bases, within existing column collision footprints.
- for(const z of [14,6,-2,-10])for(const side of [-1,1])placedTree(side*9,z,.63);
- // Room corners stay outside the side-room walkable bounds.
- for(const cx of [-34,34])for(const side of [-1,1])for(const z of [-14.4,26.4])placedTree(cx+side*10.6,z,.64);
+ let treeCount=0;function placedTree(x,z,size){const start=group.children.length;tree(x,z,size);const factor=TREE_SCALE;for(const mesh of group.children.slice(start)){mesh.position.x=x+(mesh.position.x-x)*factor;mesh.position.z=z+(mesh.position.z-z)*factor;mesh.position.y*=factor;mesh.scale.multiplyScalar(factor);}treeCount++;}
+ for(const t of REGULAR_TREES)placedTree(t.x,t.z,t.size);
  // Large room trees stay below the ceiling and have four dense spiral light strings.
  for(const t of ROOM_TREES){
   placedTree(t.x,t.z,t.size);

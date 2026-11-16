@@ -1,3 +1,5 @@
+import {ROOM_TREES,TREE_FOOTPRINTS} from './christmas-layout.js';
+export {ROOM_TREES};
 import {WORLD_SCALE as S} from './world-scale.js';
 export const PEW_ROWS=Object.freeze([18,15,12,3,0,-3,-6]);
 export const LAYOUT_ROOMS=Object.freeze([
@@ -6,11 +8,10 @@ export const LAYOUT_ROOMS=Object.freeze([
 {id:'fellowship',name:'고해성사실',cx:34,minX:24,maxX:44,minZ:-14,maxZ:26}]);
 export const ROOMS=LAYOUT_ROOMS.map(r=>({...r,cx:r.cx*S,minX:r.minX*S,maxX:r.maxX*S,minZ:r.minZ*S,maxZ:r.maxZ*S}));
 export const CORRIDORS=[{minX:-24,maxX:-11.4,minZ:5.3,maxZ:10.7},{minX:11.4,maxX:24,minZ:5.3,maxZ:10.7}].map(b=>Object.fromEntries(Object.entries(b).map(([k,v])=>[k,v*S])));
-export const ROOM_TREES=LAYOUT_ROOMS.slice(1).map(room=>({room:room.id,x:room.cx+Math.sign(room.cx)*6.5,z:-10.5,radius:2.85,size:1.8}));
 export const SIDE_ROWS=[18,12,6,0,-6];
 export const SEATS=PEW_ROWS.flatMap(z=>[-1,1].flatMap(side=>[4.2,5.6,7].map(x=>({id:'nave:'+side+':'+z+':'+x,x:side*x,z,side,room:'nave'})))).concat(LAYOUT_ROOMS.slice(1).flatMap(room=>SIDE_ROWS.flatMap(z=>[-1,1].flatMap(side=>[-.8,0,.8].map(offset=>({id:room.id+':'+side+':'+z+':'+offset,x:room.cx+side*4+offset,z,side,room:room.id}))))));
 export const OBSTACLES=PEW_ROWS.flatMap(z=>[-1,1].map(side=>({minX:side<0?-7.95:3.25,maxX:side<0?-3.25:7.95,minZ:z-.8,maxZ:z+.95}))).concat(LAYOUT_ROOMS.slice(1).flatMap(room=>SIDE_ROWS.flatMap(z=>[-1,1].map(side=>({minX:room.cx+side*4-1.8,maxX:room.cx+side*4+1.8,minZ:z-.8,maxZ:z+.95}))))).concat([-1,1].flatMap(side=>Array.from({length:7},(_,i)=>({minX:side*9-1.2,maxX:side*9+1.2,minZ:22-i*8-1.2,maxZ:22-i*8+1.2}))));
-OBSTACLES.push(...ROOM_TREES.map(t=>({minX:t.x-t.radius,maxX:t.x+t.radius,minZ:t.z-t.radius,maxZ:t.z+t.radius,height:10.5})));
+OBSTACLES.push(...TREE_FOOTPRINTS.map(t=>({minX:t.x-t.radius,maxX:t.x+t.radius,minZ:t.z-t.radius,maxZ:t.z+t.radius,height:t.height})));
 for(const seat of SEATS){seat.x*=S;seat.z*=S;}for(const o of OBSTACLES)for(const k of ['minX','maxX','minZ','maxZ'])o[k]*=S;
 // Solid sides/back of the confession booth; the central entrance remains open.
 OBSTACLES.push({minX:31.5*S,maxX:36.5*S,minZ:-11.35*S,maxZ:-11.05*S},...[-1,1].map(side=>({minX:(34+side*2.4)*S-.12,maxX:(34+side*2.4)*S+.12,minZ:-11.4*S,maxZ:-8.8*S})));

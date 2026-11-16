@@ -18,7 +18,11 @@ screenshots/
 참고이미지/
 
 # Local media and temporary runtime state (full assets are kept in project ZIP backups).
-MP3/
+MP3/*
+!MP3/Hymn/
+MP3/Hymn/*
+!MP3/Hymn/*.mid
+!MP3/Hymn/*.txt
 public/music/*
 !public/music/README.md
 public-origin.json

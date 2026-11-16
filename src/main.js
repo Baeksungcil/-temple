@@ -1,3 +1,5 @@
+import {setupBottomMenu} from './bottom-menu.js';
+import {createBlessing} from './blessing.js';
 import {setupWishes} from './wishes.js';
 import {createSnow} from './snow.js';
 import {createConfession} from './confession.js';
@@ -37,7 +39,8 @@ const wishes=setupWishes({scene,camera,character,canvas});
 const multiplayer=createMultiplayer({scene,character,canvas,wishes});
 const media=setupMedia({scene,camera,renderer,controls,character,canvas});
 const confession=createConfession({scene,camera,character,canvas});
-setupMobileKeyboard();
+const blessing=createBlessing({scene,character,canvas,camera,controls,getPeople:multiplayer.getPeople});
+setupMobileKeyboard();setupBottomMenu();
 $('#home').onclick=()=>character.cameraHome();
 
 
@@ -48,7 +51,7 @@ function resize(){const {width:w,height:h}=document.querySelector("#app").getBou
 let prev=performance.now(),lastLight=0,lastRender=0;const forward=new THREE.Vector3(),right=new THREE.Vector3(),delta=new THREE.Vector3();
 function frame(now){requestAnimationFrame(frame);const dt=Math.min((now-prev)/1000,.12);if(document.hidden||now-lastRender<33)return;prev=now;lastRender=now;
 if(now-lastLight>1000){lastLight=now;const mode=$('#time').value,h=mode==='live'?seoulHour():({day:12,sunset:18,night:23})[mode],d=daylight(h);document.body.classList.toggle('night',d<.25);hemi.intensity=.055+.075*d;sun.intensity=.06+.12*d;interiorLight.update(d);updateStainedLight(d);atmosphere.setDaylight(d);sun.color.set(h>16&&h<20?'#ffc080':'#ffe8c4');const sky=new THREE.Color('#211e29').lerp(new THREE.Color('#b49c7a'),d);scene.background.copy(sky);scene.fog.color.copy(sky);lamps.forEach(l=>l.intensity=1.4*(25+25*(1-d)));$('#clock').textContent=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date())+' KST';}
-christmas.update(now/1000);atmosphere.update(now/1000);stageCharacters.update(now/1000);snow.update(dt);character.update(dt);multiplayer.update(dt);controls.update();confession.update(dt);wishes.update();renderer.render(scene,camera);media.render();canvas.dataset.drawCalls=String(renderer.info.render.calls);}
+christmas.update(now/1000);atmosphere.update(now/1000);stageCharacters.update(now/1000);snow.update(dt);character.update(dt);blessing.update(dt);multiplayer.update(dt);controls.update();confession.update(dt);wishes.update();renderer.render(scene,camera);media.render();canvas.dataset.drawCalls=String(renderer.info.render.calls);}
 renderer.render(scene,camera);$('#status').hidden=true;requestAnimationFrame(frame);canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();fail('그래픽 연결이 끊겼습니다. 페이지를 다시 열어 주세요.');});
 }catch(e){fail('WebGL 2를 지원하는 최신 브라우저와 하드웨어 가속을 확인해 주세요. '+e.message);}
 // Basic consent: no GTM request before affirmative consent.

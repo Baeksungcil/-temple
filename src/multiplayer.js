@@ -7,9 +7,9 @@ export function createMultiplayer({scene,character,canvas,wishes}){
  const local=['localhost','127.0.0.1'].includes(location.hostname),url=globalThis.TEMPLE_PREVIEW_WS||import.meta.env.VITE_WORLD_WS_URL||(local?'ws://127.0.0.1:8790/world':'');
  let socket,id=null,names={},connected=false,sequence=0,accumulator=0,retries=0,lastChatAt=0;const remotes=new Map(),pendingMoves=new Map();const ambient=createAmbientVisitors({scene,canvas});
  const protoScene=new THREE.Scene(),proto=createVisitor(protoScene),parts=[];proto.root.traverse(o=>{if(o.isMesh){const instances=new THREE.InstancedMesh(o.geometry,o.material,99);instances.count=0;instances.frustumCulled=false;instances.castShadow=false;scene.add(instances);parts.push({source:o,instances});}});
- function append(name,text,system=false){const item=document.createElement('p'),strong=document.createElement('strong'),body=document.createElement('span');strong.textContent=system?'안내':name;body.textContent=' '+text;item.append(strong,body);log.append(item);while(log.children.length>50)log.firstElementChild.remove();log.scrollTop=log.scrollHeight;if(!system){const feed=document.querySelector('#chat-feed'),bubble=document.createElement('p'),speaker=document.createElement('b'),textNode=document.createElement('span');speaker.textContent=name;textNode.textContent=text;bubble.append(speaker,textNode);feed.append(bubble);while(feed.children.length>4)feed.firstElementChild.remove();setTimeout(()=>{bubble.classList.add('fading');setTimeout(()=>bubble.remove(),600);},15000);}}
+ function append(name,text,system=false){const item=document.createElement('p'),strong=document.createElement('strong'),body=document.createElement('span');strong.textContent=system?'안내':name;body.textContent=' '+text;item.append(strong,body);log.append(item);while(log.children.length>50)log.firstElementChild.remove();log.scrollTop=log.scrollHeight;if(!system){const feed=document.querySelector('#chat-feed'),bubble=document.createElement('p'),speaker=document.createElement('b'),textNode=document.createElement('span');speaker.textContent=name;textNode.textContent=text;bubble.append(speaker,textNode);feed.append(bubble);while(feed.children.length>4)feed.firstElementChild.remove();setTimeout(()=>{bubble.classList.add('fading');setTimeout(()=>bubble.remove(),600);},45000);}}
  function send(m){if(connected&&socket?.readyState===WebSocket.OPEN){socket.send(JSON.stringify(m));return true;}return false;}
- function connectionState(text){wishes?.setConnected(connected);status.textContent=text;sendButton.disabled=!connected;input.disabled=!connected;nameInput.disabled=!connected;document.querySelector('#name-save').disabled=!connected;canvas.dataset.online=String(connected);}
+ function connectionState(text){character.setNetworkState(connected);wishes?.setConnected(connected);status.textContent=text;sendButton.disabled=!connected;input.disabled=!connected;nameInput.disabled=!connected;document.querySelector('#name-save').disabled=!connected;canvas.dataset.online=String(connected);}
  const errorText={seat_occupied:'다른 방문객이 앉은 좌석입니다.',seat_too_far:'좌석 가까이에서 다시 선택해 주세요.',chat_rate:'메시지는 10초에 3개까지 보낼 수 있습니다.',chat_length:'메시지는 1~200자로 입력해 주세요.',invalid_name:'이름은 1~16자로 입력해 주세요.'};
  function connect(){
   if(!url){connectionState('혼자 보기 · 실시간 서버 미설정');append('', '현재는 혼자 둘러보는 모드입니다. 실시간 서버를 연결하면 대화할 수 있습니다.',true);return;}
@@ -18,10 +18,10 @@ export function createMultiplayer({scene,character,canvas,wishes}){
   socket.addEventListener('open',()=>{});
   socket.addEventListener('message',event=>{
    let m;try{m=JSON.parse(event.data);}catch{return;}
-   if(m.type==='welcome'){connected=true;retries=0;id=m.id;names=m.names||{};character.applyAuthority(m.state,true);connectionState('접속 중 · 최대 '+m.capacity+'명');canvas.dataset.playerId=id;append('', '서버에 연결되었습니다. 대화는 현재 접속한 방문객에게 전달됩니다.',true);}
+   if(m.type==='welcome'){connected=true;retries=0;id=m.id;names=m.names||{};character.confirmPosition(m.state);character.applyAuthority(m.state,true);connectionState('접속 중 · 최대 '+m.capacity+'명');canvas.dataset.playerId=id;append('', '서버에 연결되었습니다. 대화는 현재 접속한 방문객에게 전달됩니다.',true);}
    else if(m.type==='ambient'){ambient.receive(m.people||[]);character.setOccupiedSeats(m.occupied||[]);}
    else if(m.type==='names')Object.assign(names,m.names);
-   else if(m.type==='self'){if(Number.isInteger(m.seq)){const sent=pendingMoves.get(m.seq);pendingMoves.delete(m.seq);if(sent&&Math.hypot(m.state.x-sent.x,m.state.z-sent.z)>.3)character.correctBy(m.state.x-sent.x,m.state.z-sent.z);}else character.applyAuthority(m.state);}
+   else if(m.type==='self'){character.confirmPosition(m.state);if(Number.isInteger(m.seq)){const sent=pendingMoves.get(m.seq);pendingMoves.delete(m.seq);if(sent&&Math.hypot(m.state.x-sent.x,m.state.z-sent.z)>.3)character.correctBy(m.state.x-sent.x,m.state.z-sent.z);}else character.applyAuthority(m.state);}
    else if(m.type==='error'){if(m.code?.startsWith('wish_'))wishes?.reject(m.code);else append('',errorText[m.code]||'요청을 처리하지 못했습니다: '+m.code,true);}
    else if(m.type==='wish-sync'){for(const wish of m.wishes||[])wishes?.receive(wish);}
    else if(m.type==='wish')wishes?.receive(m);
@@ -50,5 +50,5 @@ export function createMultiplayer({scene,character,canvas,wishes}){
   }
   for(const part of parts){part.instances.count=index;part.instances.instanceMatrix.needsUpdate=true;}canvas.dataset.remotePlayers=String(index);
  }
- connect();return{update};
+ connect();return{update,getPeople:()=>[...ambient.getPeople(),...[...remotes.values()].map(r=>({x:r.x,z:r.z,radius:.9}))]};
 }

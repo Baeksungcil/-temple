@@ -1,3 +1,5 @@
+import hymnTracks from './hymns.json';
+import {createShuffledPlaylist} from './hymn-playlist.js';
 import {WORLD_SCALE as WORLD} from './world-scale.js';
 import * as THREE from 'three';
 import {CSS3DRenderer,CSS3DObject} from 'three/addons/renderers/CSS3DRenderer.js';
@@ -11,6 +13,18 @@ export function setupMedia({scene,camera,renderer,controls,character,canvas}){
  const label=()=>{music.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4Z"/>'+(audio.paused?'<path d="m16 9 5 6m0-6-5 6"/>':'<path d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/>')+'</svg>';music.setAttribute('aria-label',audio.paused?'배경음악 켜기':'배경음악 끄기');music.setAttribute('aria-pressed',String(!audio.paused));};
  async function play(){wantsMusic=true;try{await audio.play();message.textContent='';}catch(e){if(wantsMusic&&e.name!=='AbortError')message.textContent='음악 버튼을 눌러 재생해 주세요. 브라우저에서 재생이 제한됐습니다.';}label();}
  audio.addEventListener('play',label);audio.addEventListener('pause',label);audio.addEventListener('error',()=>{message.textContent='음악을 재생하지 못했습니다. 오디오 형식 또는 연결을 확인해 주세요.';label();});music.onclick=()=>{if(audio.paused)play();else{wantsMusic=false;audio.pause();message.textContent='';}};
+ const hymn=document.querySelector('#hymn-toggle'),playlist=createShuffledPlaylist(hymnTracks);
+ const backgroundSource=audio.src;let hymnMode=false;
+ const hymnTitle=document.createElement('p');hymnTitle.id='hymn-now-playing';hymnTitle.setAttribute('role','status');app.append(hymnTitle);
+ function hymnLabel(){const playing=hymnMode&&!audio.paused;hymn.setAttribute('aria-pressed',String(playing));hymn.querySelector('span').textContent=playing?'찬송가 멈추기':'찬송가 듣기';}
+ function nextHymn(){
+  const track=playlist.next();if(!track){message.textContent='재생할 찬송가가 없습니다.';return;}
+  audio.pause();hymnMode=true;audio.loop=false;audio.src=track.src;audio.load();hymnTitle.textContent='♫ '+track.title;canvas.dataset.hymnTrack=track.source;play();
+ }
+ hymn.onclick=()=>{if(hymnMode&&!audio.paused){wantsMusic=false;audio.pause();hymnTitle.textContent='';}else nextHymn();hymnLabel();};
+ audio.addEventListener('ended',()=>{if(hymnMode&&wantsMusic)nextHymn();});
+ for(const event of ['play','pause','error','emptied'])audio.addEventListener(event,hymnLabel);
+ music.onclick=()=>{if(!audio.paused){wantsMusic=false;audio.pause();hymnTitle.textContent='';message.textContent='';}else{hymnMode=false;hymnTitle.textContent='';audio.loop=true;if(audio.src!==backgroundSource){audio.src=backgroundSource;audio.load();}play();}hymnLabel();};
  const css=new CSS3DRenderer();css.domElement.className='worship-layer';app.prepend(css.domElement);canvas.style.zIndex='1';
  const surface=document.createElement('div');surface.id='wall-video-player';surface.style.color='#efdfbe';surface.style.fontSize='38px';surface.style.display='grid';surface.style.placeItems='center';surface.style.width='1024px';surface.style.height='576px';surface.style.background='#181716';const screen=new CSS3DObject(surface);screen.position.set(0,6,-30.8*WORLD);screen.scale.setScalar(10*WORLD/1024);scene.add(screen);
  const hole=new THREE.Mesh(new THREE.PlaneGeometry(10*WORLD,5.625*WORLD),new THREE.MeshBasicMaterial({color:0,opacity:0,blending:THREE.NoBlending,depthWrite:true}));hole.position.copy(screen.position);scene.add(hole);

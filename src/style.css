@@ -57,3 +57,32 @@ header{left:max(16px,env(safe-area-inset-left));right:max(16px,env(safe-area-ins
  #volume-panel{top:54px}#settings{top:54px;max-height:calc(100dvh - 130px);overflow:auto}
  #entry{padding:16px}#entry h1{font-size:24px;line-height:1.35;margin:10px 0}#entry p{margin:8px 0}#entry button{width:min(360px,100%);padding:12px;margin-top:8px}#entry small{margin-top:14px}
 }
+
+/* Keep all eight actions available on narrow phones. */
+#bottom-nav{overflow-x:auto;justify-content:flex-start;gap:2px;scrollbar-width:thin}
+#bottom-nav button{flex:1 0 47px;padding:4px 3px;white-space:nowrap}
+#bottom-nav button[aria-pressed=true]{color:#ffe0a0;background:#ffffff12;border-radius:12px}
+#blessing-status{position:absolute;bottom:218px;left:18px;right:18px;z-index:3;text-align:center;font-size:12px;color:#ffe3af;text-shadow:0 2px 5px #000;pointer-events:none}
+#blessing-status:empty{display:none}
+#bottom-nav button{flex:0 0 70px}#bottom-nav span{font-size:10px}
+
+#blessing-prayer{position:absolute;top:max(180px,23%);left:18px;right:18px;z-index:5;padding:15px 17px;border:1px solid #d5b78680;border-radius:18px;background:#30261ff2;color:#fff0d4;pointer-events:none;box-shadow:0 6px 22px #0004}
+#blessing-prayer b{font-size:13px;color:#f3d69f}#blessing-prayer p{font-size:12px;line-height:1.75;white-space:pre-line;margin:9px 0}#blessing-prayer small{display:block;text-align:right;font-size:10px;color:#d7bd92}
+#hymn-now-playing{position:absolute;bottom:185px;left:18px;right:18px;text-align:center;font-size:11px;color:#f3d69f;text-shadow:0 1px 5px #000;pointer-events:none}#hymn-now-playing:empty{display:none}
+@media(max-height:650px){#blessing-prayer{top:170px;padding:10px 12px}#blessing-prayer p{font-size:10px;line-height:1.5;margin:5px 0}}
+
+/* Arrow controls replace the horizontal scrollbar. */
+#bottom-menu{position:absolute;bottom:max(18px,env(safe-area-inset-bottom));left:12px;right:12px;display:grid;grid-template-columns:28px minmax(0,1fr) 28px;align-items:center;gap:2px;padding:0 3px;border:1px solid #f5dfb74d;border-radius:24px;background:#4d3d32eb;box-shadow:0 5px 25px #0004;z-index:4}
+#bottom-menu #bottom-nav{position:static;inset:auto;transform:none;width:auto;min-width:0;max-width:100%;margin:0;border:0;border-radius:0;background:none;box-shadow:none;padding:10px 0;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+#bottom-nav::-webkit-scrollbar{display:none;width:0;height:0}
+#bottom-menu .menu-arrow{width:28px;height:48px;padding:0;border:0;background:none;backdrop-filter:none;font-size:30px;line-height:1;color:#f6deb1}
+#bottom-menu .menu-arrow:disabled{opacity:.2;cursor:default}
+#app.keyboard-open #bottom-menu{visibility:hidden}
+@media(orientation:landscape) and (max-height:600px){#bottom-menu{left:50%;right:auto;transform:translateX(-50%);width:min(520px,calc(100% - 24px));bottom:max(8px,env(safe-area-inset-bottom))}#bottom-menu #bottom-nav{padding:6px 0}}
+
+#bottom-menu #bottom-nav{gap:8px;scroll-snap-type:x mandatory;touch-action:pan-y;cursor:grab;user-select:none}
+#bottom-menu #bottom-nav button{flex:0 0 var(--menu-button-width,68px);width:var(--menu-button-width,68px);min-width:0;box-sizing:border-box;scroll-snap-align:start;scroll-snap-stop:normal;padding:4px 2px}
+#bottom-menu #bottom-nav.dragging{scroll-snap-type:none;scroll-behavior:auto;cursor:grabbing}
+#bottom-nav button svg{pointer-events:none}#bottom-nav button span{font-size:10px;letter-spacing:-.3px}
+header .brand{padding:7px 10px;border:1px solid #c9aa6d77;border-radius:11px;background:linear-gradient(135deg,#204439ed,#0c261fef);color:#f3d695;box-shadow:inset 0 0 0 2px #09241b88,0 3px 14px #0003;letter-spacing:.13em}
+header .brand small{color:#eadbb9;font-size:8px;letter-spacing:.02em}

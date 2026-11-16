@@ -1,0 +1,62 @@
+[
+  {
+    "title": "나 같은 죄인 살리신",
+    "src": "/music/hymns/01_Amazing_Grace.wav",
+    "duration": 32.36,
+    "source": "01_Amazing_Grace.mid"
+  },
+  {
+    "title": "거룩 거룩 거룩 전능하신 주님",
+    "src": "/music/hymns/02_Holy_Holy_Holy.wav",
+    "duration": 40.9,
+    "source": "02_Holy_Holy_Holy.mid"
+  },
+  {
+    "title": "죄짐 맡은 우리 구주",
+    "src": "/music/hymns/03_What_a_Friend_We_Have_in_Jesus.wav",
+    "duration": 42.73,
+    "source": "03_What_a_Friend_We_Have_in_Jesus.mid"
+  },
+  {
+    "title": "기쁘다 구주 오셨네",
+    "src": "/music/hymns/04_Joy_to_the_World.wav",
+    "duration": 42.59,
+    "source": "04_Joy_to_the_World.mid"
+  },
+  {
+    "title": "고요한 밤 거룩한 밤",
+    "src": "/music/hymns/05_Silent_Night.wav",
+    "duration": 57.56,
+    "source": "05_Silent_Night.mid"
+  },
+  {
+    "title": "시온성과 같은 교회",
+    "src": "/music/hymns/06_Glorious_Things_of_Thee_Are_Spoken.wav",
+    "duration": 41.0,
+    "source": "06_Glorious_Things_of_Thee_Are_Spoken.mid"
+  },
+  {
+    "title": "내 평생에 가는 길",
+    "src": "/music/hymns/07_It_Is_Well_With_My_Soul.wav",
+    "duration": 58.15,
+    "source": "07_It_Is_Well_With_My_Soul.mid"
+  },
+  {
+    "title": "내 주를 가까이 하게 함은",
+    "src": "/music/hymns/08_Nearer_My_God_to_Thee.wav",
+    "duration": 46.59,
+    "source": "08_Nearer_My_God_to_Thee.mid"
+  },
+  {
+    "title": "내 맘의 주여 소망 되소서",
+    "src": "/music/hymns/09_Be_Thou_My_Vision.wav",
+    "duration": 26.38,
+    "source": "09_Be_Thou_My_Vision.mid"
+  },
+  {
+    "title": "내 주는 강한 성이요",
+    "src": "/music/hymns/10_A_Mighty_Fortress_Is_Our_God.wav",
+    "duration": 49.07,
+    "source": "10_A_Mighty_Fortress_Is_Our_God.mid"
+  }
+]
